@@ -1,0 +1,86 @@
+########################################
+# GENERAL
+########################################
+.DS_Store
+Thumbs.db
+*.log
+*.swp
+*.swo
+.vscode/
+.idea/
+
+########################################
+# ENV FILES (be careful with these)
+########################################
+.env
+.env.*
+!.env.example
+
+########################################
+# NODE / REACT / TYPESCRIPT
+########################################
+node_modules/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Vite specific
+.vite/
+
+########################################
+# .NET / ASP.NET CORE
+########################################
+bin/
+obj/
+out/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / VS
+_ReSharper*/
+*.DotSettings.user
+
+# Logs
+logs/
+*.log
+
+# ASP.NET Core
+appsettings.Development.json
+
+########################################
+# TEST RESULTS
+########################################
+TestResults/
+*.trx
+
+########################################
+# PUBLISH OUTPUT
+########################################
+publish/
+*.publishproj
+
+########################################
+# OS GENERATED FILES
+########################################
+ehthumbs.db
+Desktop.ini
+
+########################################
+# OPTIONAL: DOCKER
+########################################
+docker-compose.override.yml
+
+########################################
+# OPTIONAL: CACHE
+########################################
+.cache/
+.temp/
+.tmp/
