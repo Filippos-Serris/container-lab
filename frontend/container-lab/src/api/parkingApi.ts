@@ -1,6 +1,6 @@
 import type { Parking } from "../models/Parking";
 
-const BASE_URL = "http://localhost:5047/api";
+const BASE_URL = "http://localhost:5000/api";
 
 export async function getParking(id: number): Promise<Parking> {
   const response = await fetch(`${BASE_URL}/parkings/${id}`);

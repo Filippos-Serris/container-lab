@@ -1,0 +1,31 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: containerlab
+    ports:
+      - "5434:5432"
+    volumes:
+      - container-lab:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    environment:
+      ASPNETCORE_URLS: http://+:5000
+      ConnectionStrings__DefaultConnection: Host=db;Port=5432;Database=containerlab;Username=postgres;Password=password
+
+  frontend:
+    build: ./frontend/container-lab
+    ports:
+      - "3000:80" # Maps container port 80 (nginx) to host port 3000
+    depends_on:
+      - backend
+
+volumes:
+  container-lab:
